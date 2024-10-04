@@ -1,5 +1,6 @@
 import WebSocket from 'ws';
 import env from 'node:process';
+import { filterYoutubeLinks } from './chatbot.utils';
 
 
 const BOT_USER_ID = env.env.BOT_ID; // This is the User ID of the chat bot
@@ -10,7 +11,7 @@ const CHAT_CHANNEL_USER_ID = env.env.USER_ID; // This is the User ID of the chan
 
 const EVENTSUB_WEBSOCKET_URL = 'wss://eventsub.wss.twitch.tv/ws';
 
-var websocketSessionID;
+var websocketSessionID : string;
 
 // Start executing the bot from here
 (async () => {
@@ -79,6 +80,7 @@ function handleWebSocketMessage(data) {
 						// If so, send back "VoHiYo" to the chatroom
 						sendChatMessage("VoHiYo")
 					}
+					filterYoutubeLinks(data.payload.event.message.text)
 
 					break;
 			}
@@ -86,7 +88,7 @@ function handleWebSocketMessage(data) {
 	}
 }
 
-async function sendChatMessage(chatMessage) {
+async function sendChatMessage(chatMessage : string) {
 	let response = await fetch('https://api.twitch.tv/helix/chat/messages', {
 		method: 'POST',
 		headers: {
