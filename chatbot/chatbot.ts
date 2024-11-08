@@ -95,7 +95,7 @@ async function sendChatMessage(chatMessage : string) {
 			'Authorization': 'Bearer ' + OAUTH_TOKEN,
 			'Client-Id': CLIENT_ID,
 			'Content-Type': 'application/json'
-		},
+		} as HeadersInit,
 		body: JSON.stringify({
 			broadcaster_id: CHAT_CHANNEL_USER_ID,
 			sender_id: BOT_USER_ID,

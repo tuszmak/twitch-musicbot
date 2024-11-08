@@ -8,9 +8,14 @@ const youtubeLinks = [
   ];
 
 const songRequestPrompt = "!sr"
-export function filterYoutubeLinks(chatMessage : string) {
-    const messageString = String(chatMessage);
-    console.log(messageString);
+export function filterYoutubeLinks(chatMessage : string) {    
+   const chatContent = chatMessage.split('>')[0];
+   console.log(chatContent);
+   
+  if(chatContent.includes(songRequestPrompt)){
+    const songLink = chatContent.split(' ')[1];
+    if(songLink && youtubeLinks.some(linkType => songLink.includes(linkType)))
+      return songLink;      
+  }
     
-    messageString.split(' ')
 }
