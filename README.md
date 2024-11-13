@@ -28,20 +28,16 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/tuszmak/twitch-musicbot">
+  <!-- <a href="https://github.com/tuszmak/twitch-musicbot">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
 <h3 align="center">Twitch Musicbot</h3>
 
   <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/tuszmak/twitch-musicbot"><strong>Explore the docs »</strong></a>
+    Sync music with your playlists!
     <br />
     <br />
-    <a href="https://github.com/tuszmak/twitch-musicbot">View Demo</a>
-    ·
     <a href="https://github.com/tuszmak/twitch-musicbot/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
     <a href="https://github.com/tuszmak/twitch-musicbot/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
@@ -70,9 +66,6 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -81,9 +74,17 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](asd) -->
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `tuszmak`, `twitch-musicbot`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `Twitch Musicbot`, `project_description`
+This is a custom made Twitch music bot intended to sync up the Spotify and Youtube players with requests from Twitch chat.
+
+It is made up of two parts:
+The bot which converts chat messages to song link and send it to the frontend.
+The frontend where the music player will be located.
+
+### Why this one instead of MooBot/Nightbot?
+
+There's a reoccuring problem, when the requests stop, and I need to switch back to my playlist, and vice versa. I want to solve this with this bot.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,8 +102,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This software is only tested on dev environments, as it is very much WIP.
 
 ### Prerequisites
 
@@ -132,11 +132,15 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+For the twitch bot:
 ```
-For the twitch bot: npx tsx --env-file=.env .\chatbot\chatbot.ts
+npm run start_bot
 ```
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+For the frontend:
+```
+npm run dev
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,11 +148,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 ## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
 
 See the [open issues](https://github.com/tuszmak/twitch-musicbot/issues) for a full list of proposed features (and known issues).
 
@@ -177,37 +176,6 @@ Don't forget to give the project a star! Thanks again!
 <a href="https://github.com/tuszmak/twitch-musicbot/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=tuszmak/twitch-musicbot" alt="contrib.rocks image" />
 </a>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/tuszmak/twitch-musicbot](https://github.com/tuszmak/twitch-musicbot)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
