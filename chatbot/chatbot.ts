@@ -74,13 +74,8 @@ function handleWebSocketMessage(data) {
 				case 'channel.chat.message':
 					// First, print the message to the program's console.
 					console.log(`MSG #${data.payload.event.broadcaster_user_login} <${data.payload.event.chatter_user_login}> ${data.payload.event.message.text}`);
-
-					// Then check to see if that message was "HeyGuys"
-					if (data.payload.event.message.text.trim() == "HeyGuys") {
-						// If so, send back "VoHiYo" to the chatroom
-						sendChatMessage("VoHiYo")
-					}
-					filterYoutubeLinks(data.payload.event.message.text)
+					const songLink = filterYoutubeLinks(data.payload.event.message.text)
+					sendDataToFrontend(songLink)
 
 					break;
 			}
@@ -144,4 +139,11 @@ async function registerEventSubListeners() {
 		const data = await response.json();
 		console.log(`Subscribed to channel.chat.message [${data.data[0].id}]`);
 	}
+}
+
+async function sendDataToFrontend(songLink:String) {
+	await fetch("http://localhost:3000/api/chatbot", {
+		method: "POST",
+		body: songLink
+	} as RequestInit)
 }
