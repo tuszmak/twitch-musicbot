@@ -17,5 +17,4 @@ export function filterYoutubeLinks(chatMessage : string) {
     if(songLink && youtubeLinks.some(linkType => songLink.includes(linkType)))
       return songLink;      
   }
-    
 }
